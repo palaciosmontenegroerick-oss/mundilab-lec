@@ -27,3 +27,13 @@ No puedo publicar en tu nombre sin acceso autorizado a una cuenta de alojamiento
 4. Para que Google pueda encontrarla, verifica el dominio/sitio en Google Search Console y solicita la indexación de la URL. La indexación puede tardar y no garantiza aparecer en primer lugar.
 
 Para administrar libros desde varios equipos, añade posteriormente un backend seguro (por ejemplo, Supabase o Firebase) con roles de administrador.
+
+
+## Novedades de esta versión
+- Se añadieron fichas de novelas de fantasía (sin reproducir sus textos completos protegidos por derechos de autor).
+- Se agregó el botón flotante **+** para enviar lecturas y adjuntar PDF, EPUB, DOC, DOCX o TXT de hasta 15 MB.
+- Las publicaciones y archivos se guardan localmente en el navegador que los envía. **No se comparten todavía con otros visitantes.**
+- Para convertir el formulario en una publicación pública real, se necesita conectar autenticación, base de datos y almacenamiento de archivos (por ejemplo, mediante un backend).
+
+## Actualizar GitHub Pages
+Reemplaza en tu repositorio los archivos `index.html`, `styles.css` y `app.js` por los de esta versión. Mantén exactamente esos nombres. El archivo `README.md` es documentación.
