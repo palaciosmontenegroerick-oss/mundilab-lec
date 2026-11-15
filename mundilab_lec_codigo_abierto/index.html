@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="MUNDILAB LEC, biblioteca digital escolar para leer, descubrir y aprender.">
+<meta name="theme-color" content="#173f35"><title>MUNDILAB LEC | Biblioteca digital</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar"><a class="brand" href="#"><span class="brand-mark">M</span><span id="brandName">MUNDILAB LEC</span></a><button class="button outline" id="adminOpen">Administración</button></header>
+<section class="hero"><div class="hero-inner"><div><p class="eyebrow">BIBLIOTECA DIGITAL ESCOLAR</p><h1 id="heroTitle">Un mundo de ideas comienza con una lectura.</h1><p id="heroText">Explora cuentos, textos informativos y lecturas de ciencia. Encuentra una historia, aprende algo nuevo y deja que la curiosidad te guíe.</p><a class="button gold" href="#catalogo">Explorar biblioteca</a></div><div class="hero-art" aria-hidden="true">📚</div></div></section>
+<main class="container" id="catalogo"><div class="search-row"><input id="search" type="search" placeholder="Buscar libros, autores o temas…" aria-label="Buscar lecturas"><button class="button" id="clearSearch">Limpiar</button></div>
+<div class="section-heading"><div><p class="eyebrow dark">LECTURAS PARA DESCUBRIR</p><h2>Explora la biblioteca</h2></div><span id="resultCount" class="muted"></span></div>
+<nav class="filters" aria-label="Categorías"><button class="chip active" data-filter="Todos">Todos</button><button class="chip" data-filter="Cuentos">Cuentos</button><button class="chip" data-filter="Informativos">Informativos</button><button class="chip" data-filter="Ciencia">Ciencia</button><button class="chip" data-filter="Favoritos">♥ Favoritos</button></nav>
+<div id="bookGrid" class="book-grid"></div><p id="empty" class="empty hidden">No hay lecturas que coincidan con tu búsqueda.</p></main>
+<footer class="footer"><b id="footerName">MUNDILAB LEC</b><span>Leer · Descubrir · Aprender</span></footer>
+
+<div class="modal" id="readerModal"><article class="reader"><div class="modal-head"><b>📖 Modo lectura</b><button class="button outline" id="readerClose">Cerrar</button></div><div id="readerContent" class="reader-content"></div></article></div>
+<div class="modal" id="adminModal"><section class="admin"><div class="modal-head"><b>Panel de administración</b><button class="button outline" id="adminClose">Cerrar</button></div><div class="admin-content">
+<p class="security-note"><b>Versión inicial:</b> esta contraseña solo protege la interfaz del navegador. No es seguridad real para una web pública porque el código puede inspeccionarse. Para uso público, conecta un servicio de autenticación y una base de datos; no publiques información privada.</p>
+<div class="tabs"><button class="tab active" data-tab="books">Libros</button><button class="tab" data-tab="design">Diseño</button><button class="tab" data-tab="backup">Respaldo</button></div>
+<section class="tab-panel active" id="panel-books"><h3 id="formTitle">Publicar una lectura</h3><form id="bookForm"><input id="bookId" type="hidden"><div class="form-grid">
+<label>Título<input id="title" required maxlength="120"></label><label>Autor<input id="author"></label>
+<label>Categoría<select id="category"><option>Cuentos</option><option>Informativos</option><option>Ciencia</option></select></label><label>Color de portada<input id="coverColor" type="color" value="#315f52"></label>
+<label class="wide">Descripción<input id="description" maxlength="180"></label><label class="wide">Texto completo<textarea id="content" required rows="9"></textarea></label>
+<label class="wide">Preguntas y respuestas (una por línea: pregunta | respuesta)<textarea id="questions" rows="4"></textarea></label><label class="wide">Vocabulario (una por línea: palabra: definición)<textarea id="vocabulary" rows="3"></textarea></label></div>
+<div class="button-row"><button class="button" type="submit">Guardar lectura</button><button class="button secondary" type="button" id="resetForm">Limpiar</button></div><p id="formMessage" class="muted"></p></form><hr><h3>Lecturas publicadas</h3><div id="adminBookList" class="admin-list"></div></section>
+<section class="tab-panel" id="panel-design"><h3>Personalizar la página</h3><div class="form-grid">
+<label>Nombre del sitio<input id="siteName"></label><label>Color principal<input id="primaryColor" type="color"></label>
+<label class="wide">Título principal<input id="siteTitle"></label><label class="wide">Texto de bienvenida<textarea id="siteText" rows="3"></textarea></label>
+</div><div class="button-row"><button class="button" id="saveDesign">Guardar diseño</button><button class="button secondary" id="restoreDesign">Restaurar diseño</button></div><p id="designMessage" class="muted"></p></section>
+<section class="tab-panel" id="panel-backup"><h3>Copias de seguridad</h3><p>Exporta tus libros y ajustes a un archivo JSON para conservarlos o trasladarlos.</p><div class="button-row"><button class="button" id="exportData">Exportar biblioteca</button><label class="button secondary file-label">Importar biblioteca<input id="importData" type="file" accept=".json,application/json" hidden></label></div><p id="backupMessage" class="muted"></p></section>
+</div></section></div>
+<script src="app.js"></script>
+</body></html>
